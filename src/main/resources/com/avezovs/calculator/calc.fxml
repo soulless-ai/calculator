@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="main" prefHeight="560.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avezovs.calculator.CalculatorController">
+   <padding>
+      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+   </padding>
+   <children>
+      <AnchorPane fx:id="ap" prefHeight="0.0" prefWidth="0.0" />
+      <HBox fx:id="topBar" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="320.0">
+         <VBox.margin>
+            <Insets bottom="-2.0" left="-2.0" right="-2.0" top="-2.0" />
+         </VBox.margin>
+         <children>
+            <Label fx:id="cTitle" prefHeight="20.0" prefWidth="60.0" text="Calculator">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Label>
+            <HBox fx:id="topBarButtons" alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="250.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <Button fx:id="closeButton" cancelButton="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="40.0" text="✕" />
+                  <Button fx:id="fullScreen" cancelButton="true" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="40.0" text="☐" />
+                  <Button fx:id="rollUp" cancelButton="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="40.0" text="─">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <VBox fx:id="wrapperStandard" alignment="TOP_CENTER" prefHeight="530.0" prefWidth="320.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="320.0">
+               <padding>
+                  <Insets left="-2.0" right="-2.0" />
+               </padding>
+               <children>
+                  <Button fx:id="cChange" cancelButton="true" contentDisplay="TOP" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="≡">
+                     <font>
+                        <Font name="Times New Roman" size="30.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-5.0" left="-5.0" right="-5.0" top="-5.0" />
+                     </padding>
+                  </Button>
+                  <Label fx:id="cName" prefHeight="32.0" prefWidth="205.0" text="Standard">
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <HBox fx:id="cHistory" alignment="CENTER" prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/history.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <Label fx:id="cFirstValue" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="290.0" text=" ">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="cSecondValue" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="290.0" text="0" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri Bold" size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="320.0" spacing="2.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="memoryClear" cancelButton="true" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="MC" />
+                  <Button fx:id="memoryRecall" cancelButton="true" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="MR" />
+                  <Button fx:id="memoryAdd" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="M+" />
+                  <Button fx:id="memorySubtract" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="M-" />
+                  <Button fx:id="memoryStore" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="MS" />
+                  <Button fx:id="memory" cancelButton="true" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="M🢓" />
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="370.0" prefWidth="320.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="2.0">
+                     <children>
+                        <Button fx:id="percent" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="\%">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="radical" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="√">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="square" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="x²">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="negativeDegree" alignment="CENTER" graphicTextGap="2.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="¹/x">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="2.0">
+                     <children>
+                        <Button fx:id="clearLastField" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="CE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="clearField" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="C">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="clearChar" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="⌫">
+                           <font>
+                              <Font name="Times New Roman" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="divide" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="÷">
+                           <font>
+                              <Font name="Times New Roman" size="25.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="2.0">
+                     <children>
+                        <Button fx:id="seven" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="7">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="eight" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="8">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="nine" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="9">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="multiply" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="✕">
+                           <font>
+                              <Font name="Roboto" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="2.0">
+                     <children>
+                        <Button fx:id="four" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="4">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="five" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="5">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="six" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="6">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="subtraction" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="─">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="2.0">
+                     <children>
+                        <Button fx:id="one" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="1">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="two" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="2">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="three" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="3">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addition" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="+">
+                           <font>
+                              <Font name="Times New Roman" size="25.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="2.0">
+                     <children>
+                        <Button fx:id="disambiguation" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="±">
+                           <font>
+                              <Font name="Roboto" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="zero" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="0">
+                           <font>
+                              <Font name="Arial Bold" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="decimals" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text=",">
+                           <font>
+                              <Font name="Arial" size="25.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="summa" mnemonicParsing="false" prefHeight="57.0" prefWidth="77.0" text="=">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

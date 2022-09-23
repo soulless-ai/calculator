@@ -1,0 +1,59 @@
+
+
+#main {
+    -fx-background-color: #efefef;
+}
+
+.button {
+    -fx-effect: none;
+    -fx-border-color: transparent;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-background-color: #e1e1e1;
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero {
+    -fx-background-color: #ffffff;
+}
+#cChange, #closeButton, #fullScreen, #rollUp, #memory, #memoryAdd, #memorySubtract, #memoryStore, #memoryRecall, #memoryClear {
+    -fx-background-color: transparent;
+}
+
+#cChange:hover, #fullScreen:hover, #rollUp:hover, #cHistory:hover,
+#one:hover, #two:hover, #three:hover, #four:hover, #five:hover,
+#six:hover, #seven:hover, #eight:hover, #nine:hover, #zero:hover,
+#percent:hover, #radical:hover, #square:hover, #negativeDegree:hover,
+#clearLastField:hover, #clearField:hover, #clearChar:hover, #divide:hover,
+#multiply:hover, #subtraction:hover, #addition:hover, #summa:hover,
+#decimals:hover, #disambiguation:hover {
+    -fx-border-style: solid inside;
+    -fx-border-width: 0,2px;
+    -fx-background-color: #cccccc;
+}
+#memory:hover, #memoryAdd:hover, #memorySubtract:hover, #memoryStore:hover, #memoryRecall:hover, #memoryClear:hover {
+    -fx-background-color:
+            -fx-shadow-highlight-color,
+            -fx-outer-border,
+            -fx-inner-border,
+            -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-border-color: #cccccc;
+}
+#closeButton:hover {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #ff0000;
+}
+
+#cFirstValue {
+    -fx-font-size: 16px;
+    -fx-font-family: "Calibri";
+    -fx-font-weight: bold;
+    -fx-text-fill: #cccccc;
+}
+#cSecondValue {
+    -fx-font-size: 45px;
+    -fx-font-family: "Calibri";
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
